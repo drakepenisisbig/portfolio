@@ -70,7 +70,7 @@
         <div class="max-w-6xl mx-auto">
             <div class="mb-12">
                 <h2 class="text-3xl font-800 mb-2">Featured Projects</h2>
-                <p class="text-gray-500">Hover over a project to see the script in action.</p>
+                <p class="text-gray-500">Click a video to open it full-screen or hover to preview.</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
                 <!-- Projects injected via JS -->
@@ -164,12 +164,12 @@
             { title: 'Gameplay Loop', price: '12k+ R$', desc: 'End-to-end game logic from lobby to gameplay.' }
         ];
 
-        // Render Projects
+        // Render Projects with Clickable Links
         const projectsGrid = document.getElementById('projectsGrid');
         projects.forEach(p => {
             projectsGrid.innerHTML += `
                 <div class="group bg-white rounded-3xl overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300">
-                    <div class="aspect-video bg-black relative overflow-hidden">
+                    <a href="${p.file}" target="_blank" class="block aspect-video bg-black relative overflow-hidden cursor-pointer">
                         <video 
                             src="${p.file}" 
                             muted 
@@ -178,10 +178,10 @@
                             onmouseover="this.play()" 
                             onmouseout="this.pause(); this.currentTime = 0;">
                         </video>
-                        <div class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:opacity-0 transition pointer-events-none">
-                            <i data-lucide="play" class="text-white w-10 h-10"></i>
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/0 transition">
+                            <i data-lucide="play" class="text-white w-10 h-10 drop-shadow-lg"></i>
                         </div>
-                    </div>
+                    </a>
                     <div class="p-6 text-left">
                         <h3 class="font-bold text-lg mb-2">${p.title}</h3>
                         <p class="text-gray-500 text-sm leading-relaxed">${p.desc}</p>
