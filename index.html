@@ -124,37 +124,37 @@
     </footer>
 
     <script>
-        // Final Video Mapping based on your screenshot
+        // Final Corrected Mapping based on your requested names and images
         const projects = [
             { 
-                title: 'Color Swap System', 
+                title: 'RNG System', 
                 file: '2026-01-17 14-44-01.mp4', 
-                desc: 'Custom floor logic with dynamic color detection and state management.' 
+                desc: 'RNG system with a smooth menu, clean animations, and satisfying sound effects for a polished player experience.' 
             },
             { 
-                title: 'Admin Utility Engine', 
+                title: 'Working Admin Script', 
                 file: 'Screen Recording 2026-04-10 215946.mp4', 
-                desc: 'A robust server-side command suite for live game management.' 
+                desc: "Working ban, kick, and global chat that only allowed people can access.(You can't ban/kick in roblox stuido but you can tell it works)" 
             },
             { 
-                title: 'Advanced RNG Mechanics', 
-                file: 'Color change.mp4', 
-                desc: 'Weighted rarity systems for item drops and randomized events.' 
-            },
-            { 
-                title: 'Global Teleportation', 
-                file: 'Screen Recording 2026-04-11 175347.mp4', 
-                desc: 'Seamless multi-point teleportation with integrated VFX handling.' 
-            },
-            { 
-                title: 'Currency & Shop Logic', 
+                title: 'Shop system with obby stages!', 
                 file: 'Screen Recording 2026-04-10 220645.mp4', 
-                desc: 'Secure DataStore integration for player economy and purchases.' 
+                desc: 'You will sacrafice your obby stages for an item/ upgrade, Has UI, depending on how many stages the item is you will get the item but subtracted stages and will have to do them again.' 
             },
             { 
-                title: 'Gameplay Loop Controller', 
+                title: 'Skip stage gamepass', 
                 file: 'Screen Recording 2026-04-04 231918 (1).mp4', 
-                desc: 'Automated round management and player session state logic.' 
+                desc: 'Gamepass on buy you skip your stage, nice sound effect and color change.' 
+            },
+            { 
+                title: 'Color changing obby', 
+                file: 'Color change.mp4', 
+                desc: 'Nice color changing checkpoints with Sound effects on touch, stage tracker UI connected to leaderstats. UI to say which color will be deadly.' 
+            },
+            { 
+                title: 'Stamina system', 
+                file: 'Screen Recording 2026-04-11 175347.mp4', 
+                desc: 'Stamina system, with UI, as you hold it goes down and blurs to show exhaustion. As you regain energy blur goes away.' 
             }
         ];
 
@@ -183,7 +183,7 @@
                         </div>
                     </a>
                     <div class="p-6 text-left">
-                        <h3 class="font-bold text-lg mb-2">${p.title}</h3>
+                        <h3 class="font-bold text-lg mb-2 text-gray-900">${p.title}</h3>
                         <p class="text-gray-500 text-sm leading-relaxed">${p.desc}</p>
                     </div>
                 </div>`;
@@ -193,7 +193,7 @@
         const pricingGrid = document.getElementById('pricingGrid');
         pricing.forEach(p => {
             pricingGrid.innerHTML += `
-                <div class="p-8 bg-white rounded-3xl border border-gray-100 hover:border-blue-300 transition group">
+                <div class="p-8 bg-white rounded-3xl border border-gray-100 hover:border-blue-300 transition group text-center">
                     <h3 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-4">${p.title}</h3>
                     <p class="text-3xl font-800 mb-4">${p.price}</p>
                     <p class="text-gray-500 text-sm">${p.desc}</p>
