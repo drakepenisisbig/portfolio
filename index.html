@@ -1,109 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" class="h-full">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STATE — Roblox Scripter</title>
-    <script src="https://cdn.tailwindcss.com/"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Lexend', sans-serif; scroll-behavior: smooth; }
-        .hero-gradient { background: radial-gradient(circle at top right, #eff6ff 0%, #ffffff 100%); }
-        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(229, 231, 235, 0.5); }
-        video { object-fit: cover; width: 100%; height: 100%; }
-    </style>
-</head>
-<body class="h-full bg-white text-gray-900">
-
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-card px-6 py-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <span class="font-800 text-xl tracking-tighter text-blue-600">STATE</span>
-            <div class="space-x-8 text-sm font-medium hidden md:flex">
-                <a href="#about" class="hover:text-blue-600 transition">About</a>
-                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
-                <a href="#pricing" class="hover:text-blue-600 transition">Pricing</a>
-                <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-gradient pt-44 pb-32 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-5xl md:text-7xl font-800 tracking-tight mb-6">Clean Code. <span class="text-blue-600">Smooth Games.</span></h1>
-            <p class="text-lg md:text-xl text-gray-600 font-light mb-10 leading-relaxed">
-                I build high-performance, secure, and scalable systems for Roblox experiences. 
-                Focusing on Luau optimization and seamless player loops.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#projects" class="px-8 py-4 bg-gray-900 text-white font-semibold rounded-xl hover:bg-black transition">View My Work</a>
-                <a href="#contact" class="px-8 py-4 bg-white border border-gray-200 font-semibold rounded-xl hover:bg-gray-50 transition">Get a Quote</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Gallery -->
-    <section id="projects" class="py-24 px-6 bg-gray-50">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-12">
-                <h2 class="text-3xl font-800 mb-2">Featured Projects</h2>
-                <p class="text-gray-500">Click a video to open it full-screen or hover to preview.</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
-                <!-- Projects injected via JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-24 px-6">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-3xl font-800 mb-14">Commission Pricing</h2>
-            <div class="grid md:grid-cols-3 gap-8" id="pricingGrid">
-                <!-- Pricing injected via JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 px-6 border-t border-gray-100 bg-white">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-800 mb-6">Start a Project</h2>
-            <p class="text-gray-600 mb-10 text-lg">I am currently available for commissions. Let's build something great together.</p>
-            
-            <div class="grid md:grid-cols-2 gap-4 mb-12">
-                <div class="p-6 bg-blue-50 rounded-3xl flex items-center gap-4">
-                    <i data-lucide="message-circle" class="text-blue-600"></i>
-                    <div class="text-left">
-                        <p class="text-xs text-blue-600 font-bold uppercase">Discord</p>
-                        <p class="font-semibold text-gray-900">nozifybtw</p>
-                    </div>
-                </div>
-                <div class="p-6 bg-blue-50 rounded-3xl flex items-center gap-4">
-                    <i data-lucide="gamepad-2" class="text-blue-600"></i>
-                    <div class="text-left">
-                        <p class="text-xs text-blue-600 font-bold uppercase">Roblox</p>
-                        <p class="font-semibold text-gray-900">sunnyplaysgh</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-10 border border-dashed border-blue-200 rounded-3xl">
-                <p class="text-sm text-gray-500 mb-2 font-medium">Accepting Payments via CashApp</p>
-                <p class="text-3xl font-bold text-blue-600">$jwwhl</p>
-                <p class="text-xs text-gray-400 mt-4 italic">30% upfront requirement for new clients</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-12 border-t border-gray-100 text-center text-gray-400 text-xs">
-        <p>© 2026 STATE SCRIPTING. Built for performance.</p>
-    </footer>
-
-    <script>
-        // Data mapping based on your specific requirements
+<script>
+        // Data strictly mapped to the visual layout in image_785435.png
+        // 1. Top Left | 2. Top Middle | 3. Top Right
+        // 4. Bottom Left | 5. Bottom Middle | 6. Bottom Right
         const projects = [
             { 
                 title: 'Teleport', 
@@ -118,12 +16,12 @@
             { 
                 title: 'Working Admin Script', 
                 file: 'Screen Recording 2026-04-10 220645.mp4', 
-                desc: "Working ban, kick, and global chat that only allowed people can access. (You can't ban/kick in roblox studio but you can tell it works)" 
+                desc: "Working ban, kick, and global chat that only allowed people can access.(You can't ban/kick in roblox stuido but you can tell it works)" 
             },
             { 
                 title: 'Shop system with obby stages!', 
-                file: 'Screen Recording 2026-04-11 175347.mp4', 
-                desc: 'You will sacrifice your obby stages for an item/upgrade. Has UI, depending on how many stages the item is you will get the item but subtracted stages and will have to do them again.' 
+                file: 'Screen Recording 2026-04-04 231918 (1).mp4', 
+                desc: 'You will sacrafice your obby stages for an item/ upgrade, Has UI, depending on how many stages the item is you will get the item but subtracted stages and will have to do them again.' 
             },
             { 
                 title: 'Color changing obby', 
@@ -132,7 +30,7 @@
             },
             { 
                 title: 'Skip stage gamepass', 
-                file: 'Screen Recording 2026-04-04 231918 (1).mp4', 
+                file: 'Screen Recording 2026-04-11 175347.mp4', 
                 desc: 'Gamepass on buy you skip your stage, nice sound effect and color change.' 
             }
         ];
@@ -145,6 +43,7 @@
 
         // Render Projects
         const projectsGrid = document.getElementById('projectsGrid');
+        projectsGrid.innerHTML = ''; 
         projects.forEach(p => {
             projectsGrid.innerHTML += `
                 <div class="group bg-white rounded-3xl overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300">
@@ -170,6 +69,7 @@
 
         // Render Pricing
         const pricingGrid = document.getElementById('pricingGrid');
+        pricingGrid.innerHTML = '';
         pricing.forEach(p => {
             pricingGrid.innerHTML += `
                 <div class="p-8 bg-white rounded-3xl border border-gray-100 hover:border-blue-300 transition group text-center">
@@ -181,5 +81,3 @@
 
         lucide.createIcons();
     </script>
-</body>
-</html>
