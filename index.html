@@ -11,6 +11,7 @@
         body { font-family: 'Lexend', sans-serif; scroll-behavior: smooth; }
         .hero-gradient { background: radial-gradient(circle at top right, #eff6ff 0%, #ffffff 100%); }
         .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(229, 231, 235, 0.5); }
+        video { object-fit: cover; width: 100%; height: 100%; }
     </style>
 </head>
 <body class="h-full bg-white text-gray-900">
@@ -43,7 +44,7 @@
         </div>
     </section>
 
-    <!-- About / Stats -->
+    <!-- About Section -->
     <section id="about" class="py-24 px-6 border-t border-gray-100">
         <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center">
             <div class="space-y-4">
@@ -67,29 +68,27 @@
     <!-- Project Gallery -->
     <section id="projects" class="py-24 px-6 bg-gray-50">
         <div class="max-w-6xl mx-auto">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-3xl font-800 mb-2">Featured Projects</h2>
-                    <p class="text-gray-500">A look at the technical systems I've developed.</p>
-                </div>
+            <div class="mb-12">
+                <h2 class="text-3xl font-800 mb-2">Featured Projects</h2>
+                <p class="text-gray-500">Hover over a project to see the script in action.</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
-                <!-- Projects will be injected here by the script -->
+                <!-- Projects injected via JS -->
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
+    <!-- Pricing Section -->
     <section id="pricing" class="py-24 px-6">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-3xl font-800 mb-14">Commission Pricing</h2>
             <div class="grid md:grid-cols-3 gap-8" id="pricingGrid">
-                <!-- Pricing will be injected here -->
+                <!-- Pricing injected via JS -->
             </div>
         </div>
     </section>
 
-    <!-- Contact / Payment -->
+    <!-- Contact Section -->
     <section id="contact" class="py-24 px-6 border-t border-gray-100 bg-white">
         <div class="max-w-3xl mx-auto text-center">
             <h2 class="text-3xl font-800 mb-6">Start a Project</h2>
@@ -121,21 +120,44 @@
     </section>
 
     <footer class="py-12 border-t border-gray-100 text-center text-gray-400 text-xs">
-        <p>© 2024 STATE SCRIPTING. Built for performance.</p>
+        <p>© 2026 STATE SCRIPTING. Built for performance.</p>
     </footer>
 
     <script>
-        // Project Data
+        // Project Data - Using your exact filenames from GitHub
         const projects = [
-            { title: 'Color Swap Obby', desc: 'Automated color-cycling floor logic with custom deadly-state detection.' },
-            { title: 'Admin Utility Panel', desc: 'Full-featured server management panel with real-time command execution.' },
-            { title: 'Developer RNG System', desc: 'Weighted probability engine for rarities and item rolling mechanics.' },
-            { title: 'Advanced Teleportation', desc: 'VFX-integrated teleportation system with multi-point data handling.' },
-            { title: 'Shop & Purchase Logic', desc: 'Secure transactional systems for in-game currency and products.' },
-            { title: 'Custom Gameplay Loops', desc: 'Integrated player progression and round-based session management.' }
+            { 
+                title: 'Color Swap System', 
+                file: 'Color change.mp4', 
+                desc: 'Custom floor logic with dynamic color detection and state management.' 
+            },
+            { 
+                title: 'Admin Utility Engine', 
+                file: '2026-01-17 14-44-01.mp4', 
+                desc: 'A robust server-side command suite for live game management.' 
+            },
+            { 
+                title: 'Advanced RNG Mechanics', 
+                file: 'Screen Recording 2026-04-04 231918 (1).mp4', 
+                desc: 'Weighted rarity systems for item drops and randomized events.' 
+            },
+            { 
+                title: 'Global Teleportation', 
+                file: 'Screen Recording 2026-04-10 215946.mp4', 
+                desc: 'Seamless multi-point teleportation with integrated VFX handling.' 
+            },
+            { 
+                title: 'Currency & Shop Logic', 
+                file: 'Screen Recording 2026-04-10 220645.mp4', 
+                desc: 'Secure DataStore integration for player economy and purchases.' 
+            },
+            { 
+                title: 'Gameplay Loop Controller', 
+                file: 'Screen Recording 2026-04-11 175347.mp4', 
+                desc: 'Automated round management and player session state logic.' 
+            }
         ];
 
-        // Pricing Data
         const pricing = [
             { title: 'Small System', price: '1.5k—2.5k R$', desc: 'Single mechanics, tools, or small UI scripts.' },
             { title: 'Full System', price: '6k—10k R$', desc: 'Complete inventory, data stores, or round systems.' },
@@ -147,9 +169,18 @@
         projects.forEach(p => {
             projectsGrid.innerHTML += `
                 <div class="group bg-white rounded-3xl overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300">
-                    <div class="aspect-video bg-gradient-to-br from-blue-600 to-blue-900 flex items-center justify-center relative">
-                         <i data-lucide="play-circle" class="text-white opacity-40 group-hover:scale-110 group-hover:opacity-100 transition w-12 h-12"></i>
-                         <span class="absolute bottom-4 left-4 text-[10px] text-white/50 font-bold tracking-widest uppercase">Video Demo</span>
+                    <div class="aspect-video bg-black relative overflow-hidden">
+                        <video 
+                            src="${p.file}" 
+                            muted 
+                            loop 
+                            playsinline 
+                            onmouseover="this.play()" 
+                            onmouseout="this.pause(); this.currentTime = 0;">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:opacity-0 transition pointer-events-none">
+                            <i data-lucide="play" class="text-white w-10 h-10"></i>
+                        </div>
                     </div>
                     <div class="p-6 text-left">
                         <h3 class="font-bold text-lg mb-2">${p.title}</h3>
@@ -169,7 +200,6 @@
                 </div>`;
         });
 
-        // Initialize Icons
         lucide.createIcons();
     </script>
 </body>
